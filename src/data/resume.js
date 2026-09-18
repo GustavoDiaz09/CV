@@ -7,7 +7,7 @@ export const profile = {
   location: 'Cartagena, Colombia',
   photo: gustavoPhoto,
   summary:
-    'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. Poseo conocimientos en programación, desarrollo de interfaces y herramientas de control de versiones. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
+    'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. He construido y publicado proyectos reales: una aplicación web PWA offline-first, herramientas de escritorio con IA generativa y utilidades de concurrencia, aplicando tecnologías como TypeScript, React, Python, Java y Supabase. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
 }
 
 export const contact = [
@@ -39,20 +39,23 @@ export const contact = [
 
 export const projects = [
   {
-    title: 'Desarrollo de aplicaciones web',
-    period: '2025 - 2026',
-    subtitle: 'Proyecto académico',
+    title: 'AdmiTienda',
+    period: '2026',
+    subtitle: 'Aplicación web PWA offline-first',
     description:
-      'Desarrollo de aplicaciones web utilizando HTML, CSS y JavaScript, aplicando diseño responsivo, organización estructurada del código y buenas prácticas de desarrollo.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
+      'Aplicación web para administrar una tienda: usuarios, productos, ingresos, egresos, resúmenes financieros, alertas de inventario y CRM de deudas. Funciona sin conexión (IndexedDB), es instalable como PWA y sincroniza entre dispositivos mediante Supabase y una Edge Function. Incluye sistema de roles y autenticación local.',
+    tags: ['TypeScript', 'React', 'Vite', 'Tailwind', 'PWA', 'Supabase', 'Offline-first'],
+    link: 'https://github.com/GustavoDiaz09/Admitienda',
+    demo: 'https://admitienda.vercel.app',
   },
   {
-    title: 'Proyectos de Ingeniería de Software',
-    period: '2023 - 2026',
-    subtitle: 'Universidad de Cartagena',
+    title: 'Generador de Documentos (DOCX)',
+    period: '2026',
+    subtitle: 'Herramienta de escritorio con IA',
     description:
-      'Participación en proyectos académicos relacionados con programación, análisis de requerimientos, desarrollo de software, trabajo en equipo y aplicación de metodologías para la construcción de soluciones tecnológicas.',
-    tags: ['Análisis', 'Metodologías', 'Trabajo en equipo'],
+      'Aplicación de escritorio en Python (Tkinter) que extrae texto de un PDF, lo redacta con IA (Gemini, Groq, OpenAI, OpenRouter) y genera documentos DOCX replicando fielmente una plantilla, con verificación automática de la estructura y reintentos ante respuestas incompletas.',
+    tags: ['Python', 'Tkinter', 'IA Generativa', 'python-docx', 'OCR', 'PDF'],
+    link: 'https://github.com/GustavoDiaz09/generador-de-documento',
   },
 ]
 
@@ -70,10 +73,18 @@ export const skills = [
   'HTML5',
   'CSS3',
   'JavaScript',
+  'TypeScript',
+  'React',
+  'Vite',
+  'Tailwind',
+  'Python',
+  'Java',
+  'C#',
+  'PWA / Offline-first',
+  'Supabase',
+  'IA Generativa (LLMs)',
   'Diseño Responsivo',
   'Git & GitHub',
-  'C#',
-  'React',
   'Trabajo en equipo',
   'Resolución de problemas',
 ]

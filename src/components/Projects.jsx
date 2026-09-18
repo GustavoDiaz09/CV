@@ -8,8 +8,8 @@ export default function Projects() {
     <Section
       id="proyectos"
       eyebrow="Trayectoria"
-      title="Proyectos Académicos"
-      subtitle="Experiencias que han fortalecido mis habilidades técnicas."
+      title="Proyectos"
+      subtitle="Proyectos reales desarrollados y publicados."
     >
       <div className="projects">
         {projects.map((project, i) => (
@@ -34,6 +34,28 @@ export default function Projects() {
                   {tag}
                 </span>
               ))}
+            </div>
+            <div className="project-card__links">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  className="project-card__link project-card__link--primary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Icon name="external" size={15} />
+                  Ver demo
+                </a>
+              )}
+              <a
+                href={project.link}
+                className="project-card__link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon name="github" size={15} />
+                Código
+              </a>
             </div>
           </Reveal>
         ))}

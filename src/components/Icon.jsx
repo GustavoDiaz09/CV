@@ -51,6 +51,12 @@ const paths = {
   ),
   menu: <path d="M4 6h16M4 12h16M4 18h16" />,
   close: <path d="M18 6 6 18M6 6l12 12" />,
+  external: (
+    <>
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 20, className = '', strokeWidth = 2 }) {
