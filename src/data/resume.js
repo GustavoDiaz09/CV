@@ -4,7 +4,7 @@ export const profile = {
   name: 'Gustavo Alonso Díaz Mercado',
   role: 'Estudiante de Ingeniería de Software',
   university: 'Universidad de Cartagena',
-  location: 'Cartagena, Colombia',
+  location: 'Magangué, Bolívar, Colombia',
   photo: gustavoPhoto,
   summary:
     'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. He construido y publicado proyectos reales: una aplicación web PWA offline-first, herramientas de escritorio con IA generativa y utilidades de concurrencia, aplicando tecnologías como TypeScript, React, Python, Java y Supabase. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
