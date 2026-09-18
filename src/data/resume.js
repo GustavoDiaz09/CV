@@ -13,9 +13,9 @@ export const profile = {
 export const contact = [
   {
     id: 'email',
-    label: 'gdiazm@unicartagena.edu.co',
+    label: 'gustavoalonsomercado199@gmail.com',
     icon: 'mail',
-    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=gdiazm@unicartagena.edu.co',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=gustavoalonsomercado199@gmail.com',
   },
   {
     id: 'phone',
