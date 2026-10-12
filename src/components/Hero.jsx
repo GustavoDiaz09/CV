@@ -1,4 +1,4 @@
-import { profile, contact } from '../data/resume'
+import { profile, contact, resumePdfUrl } from '../data/resume'
 import Icon from './Icon'
 
 export default function Hero() {
@@ -24,6 +24,10 @@ export default function Hero() {
               Ver proyectos
               <Icon name="arrowDown" size={18} />
             </a>
+            <a href={resumePdfUrl} className="btn btn--ghost" download>
+              <Icon name="external" size={18} />
+              Descargar CV (PDF)
+            </a>
             <a href="#contacto" className="btn btn--ghost">
               Contactar
             </a>
@@ -34,6 +38,7 @@ export default function Hero() {
               <a
                 key={c.id}
                 href={c.href}
+                data-contact={c.id}
                 target={c.href.startsWith('http') ? '_blank' : undefined}
                 rel={c.href.startsWith('http') ? 'noreferrer' : undefined}
                 className="hero__contact-link"

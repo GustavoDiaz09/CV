@@ -1,4 +1,4 @@
-import { profile, contact } from '../data/resume'
+import { profile, contact, resumePdfUrl } from '../data/resume'
 import Icon from './Icon'
 
 export default function Footer() {
@@ -11,15 +11,21 @@ export default function Footer() {
             Si buscas un desarrollador web con ganas de aprender y crecer, estaré encantado de
             conversar.
           </p>
-          <a
-            href={contact[0].href}
-            className="btn btn--light"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Escríbeme un correo
-            <Icon name="mail" size={18} />
-          </a>
+          <div className="footer__actions">
+            <a
+              href={contact[0].href}
+              className="btn btn--light"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Escríbeme un correo
+              <Icon name="mail" size={18} />
+            </a>
+            <a href={resumePdfUrl} className="btn btn--outline" download>
+              <Icon name="external" size={18} />
+              Descargar CV (PDF)
+            </a>
+          </div>
         </div>
 
         <div className="footer__socials">

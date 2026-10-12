@@ -105,6 +105,19 @@
   color: #fff;
 }
 
+.nav__links .nav__cta--ghost {
+  background: transparent;
+  color: var(--primary-deep);
+  border: 1.5px solid var(--line);
+  margin-left: 8px;
+}
+
+.nav__links .nav__cta--ghost:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .nav__toggle {
   display: none;
 }
@@ -249,6 +262,17 @@
 
 .btn--light:hover {
   box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn--outline:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Contact links in hero */
@@ -726,6 +750,13 @@
   color: rgba(255, 255, 255, 0.72);
   font-size: 1.05rem;
   margin-bottom: 28px;
+}
+
+.footer__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .footer__socials {

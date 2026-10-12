@@ -1,0 +1,396 @@
+/* ============================================================
+   PRINT / PDF — hoja de vida en una sola columna, sin adornos
+   Se aplica con "npm run pdf" (Chrome headless) o Ctrl+P
+   ============================================================ */
+
+@page {
+  size: A4;
+  margin: 11mm 13mm;
+}
+
+@media print {
+  :root {
+    --text: #1a1a1a;
+    --text-muted: #45536b;
+    --accent: #1b4dd8;
+    --line: #d5dbe6;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: var(--text) !important;
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Todo visible: las animaciones de scroll no corren al imprimir */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* --- Ocultar navegación y elementos decorativos --- */
+  .nav,
+  .hero__ring,
+  .hero__actions,
+  .hero__intro,
+  .hero__badge,
+  .footer__cta,
+  .footer__socials,
+  .section__eyebrow,
+  .section__subtitle,
+  .project-card__icon,
+  .highlight-card__icon,
+  .edu-card__badge,
+  .hero__contact-link svg,
+  .project-card__period svg,
+  .project-card__link svg,
+  .skill-chip__dot {
+    display: none !important;
+  }
+
+  /* --- Encabezado --- */
+  .hero {
+    padding: 0 0 4pt;
+    background: none;
+    overflow: visible;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 26mm;
+    gap: 7mm;
+    align-items: start;
+  }
+
+  /* El ancho de impresión dispara las media queries móviles: se neutraliza el order:-1 */
+  .hero__media {
+    order: 0 !important;
+  }
+
+  .hero__eyebrow {
+    background: none;
+    color: var(--accent);
+    padding: 0;
+    border-radius: 0;
+    font-size: 8.4pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2pt;
+  }
+
+  .hero__dot {
+    display: none;
+  }
+
+  .hero__name {
+    font-size: 19pt;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .hero__name-accent {
+    display: block;
+    color: var(--accent);
+  }
+
+  .hero__role {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 2pt 0 4pt;
+  }
+
+  .hero__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1pt 9pt;
+    font-size: 8.4pt;
+    border-top: 0.6pt solid var(--line);
+    padding-top: 3pt;
+  }
+
+  .hero__contact-link {
+    display: inline-flex;
+    align-items: baseline;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    color: var(--text);
+  }
+
+  /* Separadores: sin esto el texto extraído por un ATS queda pegado ("HTML5CSS3") */
+  .hero__contact-link::after {
+    content: ' ·';
+    color: var(--text-muted);
+  }
+
+  .hero__contact-link[data-contact='linkedin']::after,
+  .hero__contact-link[data-contact='github']::after {
+    content: ' · ' attr(href);
+    font-size: 7.4pt;
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+  }
+
+  .hero__card {
+    width: 100% !important;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .hero__img-wrap {
+    border: 0.8pt solid var(--line);
+    border-radius: 3mm;
+    overflow: hidden;
+  }
+
+  .hero__img {
+    border-radius: 3mm;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+  }
+
+  .hero__card-footer {
+    display: none;
+  }
+
+  /* --- Secciones --- */
+  .section,
+  .section:nth-of-type(even) {
+    background: none !important;
+    padding: 0 0 4pt;
+  }
+
+  .section__head {
+    max-width: none;
+    margin: 0 0 4pt;
+    break-after: avoid;
+  }
+
+  .section__title {
+    font-size: 10.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--primary-deep);
+    border-bottom: 1pt solid var(--accent);
+    padding-bottom: 2pt;
+    margin: 0;
+  }
+
+  .lead {
+    font-size: 8.8pt;
+    color: var(--text);
+    max-width: none;
+    margin-bottom: 5pt;
+  }
+
+  /* --- Perfil --- */
+  .highlights {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5pt;
+  }
+
+  .highlight-card {
+    border: 0.6pt solid var(--line);
+    border-radius: 2mm;
+    padding: 4pt 5pt;
+    break-inside: avoid;
+  }
+
+  .highlight-card h3 {
+    font-size: 8.6pt;
+    margin-bottom: 1pt;
+  }
+
+  .highlight-card p {
+    font-size: 7.7pt;
+    line-height: 1.28;
+  }
+
+  /* --- Proyectos --- */
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 4pt;
+  }
+
+  .project-card {
+    border: 0.6pt solid var(--line);
+    border-left: 2pt solid var(--accent);
+    border-radius: 1.5mm;
+    padding: 4pt 7pt;
+    gap: 2pt;
+    break-inside: avoid;
+  }
+
+  .project-card__head {
+    display: block;
+  }
+
+  .project-card__period {
+    font-size: 8pt;
+  }
+
+  .project-card__subtitle {
+    display: inline;
+    font-size: 8.4pt;
+  }
+
+  .project-card__period::after {
+    content: ' ·';
+  }
+
+  .project-card__title {
+    font-size: 10.4pt;
+    margin-top: 1pt;
+  }
+
+  .project-card__desc {
+    font-size: 8.2pt;
+    line-height: 1.3;
+  }
+
+  .project-card__tags {
+    gap: 0;
+  }
+
+  .tag {
+    display: inline-block;
+    background: none;
+    color: var(--text-muted);
+    padding: 0;
+    border-radius: 0;
+    font-size: 7.4pt;
+    font-weight: 600;
+    margin: 0 6pt 0 0;
+  }
+
+  .tag::after {
+    content: ' ·';
+  }
+
+  .project-card__links {
+    border-top: 0.6pt solid var(--line);
+    padding-top: 3pt;
+    gap: 0 12pt;
+  }
+
+  .project-card__link {
+    border: 0;
+    background: none;
+    padding: 0;
+    font-size: 7.4pt;
+    color: var(--text-muted);
+  }
+
+  .project-card__link--primary {
+    color: var(--accent);
+  }
+
+  .project-card__link::after {
+    content: ' ' attr(href) ' ·';
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+
+  .project-card__link:last-child::after {
+    content: ' ' attr(href);
+  }
+
+  /* --- Educación --- */
+  .education {
+    max-width: none;
+  }
+
+  .edu-card {
+    display: block;
+  }
+
+  .edu-card__left {
+    display: none;
+  }
+
+  .edu-card__body {
+    border: 0.6pt solid var(--line);
+    border-radius: 1.5mm;
+    padding: 4pt 7pt;
+    break-inside: avoid;
+  }
+
+  .edu-card__degree {
+    font-size: 9.6pt;
+    margin: 2pt 0 1pt;
+  }
+
+  .edu-card__institution {
+    font-size: 8.4pt;
+  }
+
+  .edu-card__desc {
+    font-size: 8.2pt;
+    line-height: 1.3;
+    margin-top: 3pt;
+  }
+
+  /* --- Habilidades --- */
+  .skills {
+    display: block;
+    line-height: 1.3;
+  }
+
+  .skill-chip {
+    display: inline-block;
+    border: 0;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 8.2pt;
+    font-weight: 500;
+    margin: 0 6pt 0 0;
+  }
+
+  .skill-chip::after {
+    content: ' ·';
+    color: var(--text-muted);
+  }
+
+  /* --- Pie --- */
+  .footer {
+    background: none;
+    color: var(--text-muted);
+    padding: 3pt 0 0;
+    border-top: 0.6pt solid var(--line);
+  }
+
+  .footer__bar {
+    border: 0;
+    padding: 0;
+    font-size: 7.6pt;
+    color: var(--text-muted);
+  }
+
+  .footer__bar span:last-child {
+    display: none;
+  }
+}

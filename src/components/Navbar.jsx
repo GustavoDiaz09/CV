@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { navLinks } from '../data/resume'
+import { navLinks, resumePdfUrl } from '../data/resume'
 import Icon from './Icon'
 
 export default function Navbar() {
@@ -34,6 +34,14 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a
+            href={resumePdfUrl}
+            className="nav__cta nav__cta--ghost"
+            download
+            onClick={() => setOpen(false)}
+          >
+            CV (PDF)
+          </a>
           <a href="#contacto" className="nav__cta" onClick={() => setOpen(false)}>
             Contáctame
           </a>

@@ -1,5 +1,7 @@
 import gustavoPhoto from '../assets/gustavo.jpg'
 
+export const resumePdfUrl = `${import.meta.env.BASE_URL}CV-Gustavo-Diaz-Mercado.pdf`
+
 export const profile = {
   name: 'Gustavo Alonso Díaz Mercado',
   role: 'Estudiante de Ingeniería de Software',
@@ -7,7 +9,7 @@ export const profile = {
   location: 'Magangué, Bolívar, Colombia',
   photo: gustavoPhoto,
   summary:
-    'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. He construido y publicado proyectos reales: una aplicación web PWA offline-first, herramientas de escritorio con IA generativa y utilidades de concurrencia, aplicando tecnologías como TypeScript, React, Python, Java y Supabase. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
+    'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. He construido y publicado proyectos reales: una aplicación web PWA offline-first, una herramienta de escritorio con IA generativa y una API REST empresarial con Spring Boot y PostgreSQL, aplicando tecnologías como TypeScript, React, Java, Python y Supabase. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
 }
 
 export const contact = [
@@ -38,6 +40,15 @@ export const contact = [
 ]
 
 export const projects = [
+  {
+    title: 'Gestión de Agua Potable',
+    period: '2026',
+    subtitle: 'API REST empresarial con Spring Boot y JWT',
+    description:
+      'API REST en Java 17 y Spring Boot 3 para administrar un servicio de agua potable: clientes, tomas, medidores, lecturas, tarifas progresivas, facturación, pagos y red de distribución. Arquitectura por capas (Controller, Service, Repository, Entity), seguridad stateless con Spring Security y JWT, persistencia en PostgreSQL 16 y documentación con Swagger/OpenAPI.',
+    tags: ['Java', 'Spring Boot', 'PostgreSQL', 'JPA / Hibernate', 'Spring Security', 'JWT', 'REST API'],
+    link: 'https://github.com/GustavoDiaz09/servicio-agua',
+  },
   {
     title: 'AdmiTienda',
     period: '2026',
@@ -77,13 +88,21 @@ export const skills = [
   'React',
   'Vite',
   'Tailwind',
+  'Diseño Responsivo',
+  'PWA / Offline-first',
   'Python',
+  'Tkinter',
   'Java',
   'C#',
-  'PWA / Offline-first',
+  '.NET',
+  'Node.js',
+  'Spring Boot',
   'Supabase',
+  'PostgreSQL',
+  'SQL Server',
   'IA Generativa (LLMs)',
-  'Diseño Responsivo',
+  'Docker',
+  'Testing (pytest)',
   'Git & GitHub',
   'Trabajo en equipo',
   'Resolución de problemas',

@@ -16,7 +16,7 @@ const highlights = [
   },
   {
     title: 'Trabajo en equipo',
-    text: 'Colaboración efectiva en proyectos académicos y multidisciplinarios.',
+    text: 'Colaboración efectiva en proyectos multidisciplinarios.',
     icon: 'graduation',
   },
 ]
