@@ -48,6 +48,7 @@ export const projects = [
       'API REST en Java 17 y Spring Boot 3 para administrar un servicio de agua potable: clientes, tomas, medidores, lecturas, tarifas progresivas, facturación, pagos y red de distribución. Arquitectura por capas (Controller, Service, Repository, Entity), seguridad stateless con Spring Security y JWT, persistencia en PostgreSQL 16 y documentación con Swagger/OpenAPI.',
     tags: ['Java', 'Spring Boot', 'PostgreSQL', 'JPA / Hibernate', 'Spring Security', 'JWT', 'REST API'],
     link: 'https://github.com/GustavoDiaz09/servicio-agua',
+    demo: 'https://servicio-agua.vercel.app',
   },
   {
     title: 'AdmiTienda',
