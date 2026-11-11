@@ -9,7 +9,7 @@ export const profile = {
   location: 'Magangué, Bolívar, Colombia',
   photo: gustavoPhoto,
   summary:
-    'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. He construido y publicado proyectos reales: una aplicación web PWA offline-first, una herramienta de escritorio con IA generativa y una API REST empresarial con Spring Boot y PostgreSQL, aplicando tecnologías como TypeScript, React, Java, Python y Supabase. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
+    'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. He construido y publicado proyectos reales: una aplicación web PWA offline-first, una herramienta de escritorio con IA generativa y una API REST empresarial con Spring Boot y PostgreSQL, aplicando tecnologías como TypeScript, React, Java, Python y Supabase. Tengo experiencia trabajando con agentes de IA para generar código limpio, seguro y funcional: defino el contexto y los requisitos, reviso cada resultado y lo valido con pruebas antes de integrarlo. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
 }
 
 export const contact = [
@@ -102,6 +102,9 @@ export const skills = [
   'PostgreSQL',
   'SQL Server',
   'IA Generativa (LLMs)',
+  'Agentes de IA',
+  'Desarrollo asistido por IA',
+  'Código limpio y seguro',
   'Docker',
   'Testing (pytest)',
   'Git & GitHub',
