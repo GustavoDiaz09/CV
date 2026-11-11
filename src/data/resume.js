@@ -4,12 +4,12 @@ export const resumePdfUrl = `${import.meta.env.BASE_URL}CV-Gustavo-Diaz-Mercado.
 
 export const profile = {
   name: 'Gustavo Alonso Díaz Mercado',
-  role: 'Estudiante de Ingeniería de Software',
+  role: 'Ingeniero de Software en formación · Desarrollo Web y Backend',
   university: 'Universidad de Cartagena',
   location: 'Magangué, Bolívar, Colombia',
   photo: gustavoPhoto,
   summary:
-    'Estudiante de Ingeniería de Software con interés en el desarrollo web y la creación de soluciones tecnológicas. He construido y publicado proyectos reales: una aplicación web PWA offline-first, una herramienta de escritorio con IA generativa y una API REST empresarial con Spring Boot y PostgreSQL, aplicando tecnologías como TypeScript, React, Java, Python y Supabase. Tengo experiencia trabajando con agentes de IA para generar código limpio, seguro y funcional: defino el contexto y los requisitos, reviso cada resultado y lo valido con pruebas antes de integrarlo. Me caracterizo por el aprendizaje continuo, la capacidad para resolver problemas y el interés por participar en proyectos que permitan fortalecer mis habilidades técnicas y profesionales.',
+    'Ingeniero de Software en formación con experiencia en desarrollo web y APIs REST. He publicado proyectos reales con TypeScript, React, Java, Spring Boot, PostgreSQL y Supabase, entre ellos una aplicación PWA offline-first y una API con autenticación JWT. Trabajo con agentes de IA para acelerar el desarrollo y reviso, pruebo y valido cada resultado para entregar código limpio, seguro y funcional.',
 }
 
 export const contact = [
@@ -43,9 +43,9 @@ export const projects = [
   {
     title: 'Gestión de Agua Potable',
     period: '2026',
-    subtitle: 'API REST empresarial con Spring Boot y JWT',
+    subtitle: 'API REST con Spring Boot, JWT y PostgreSQL',
     description:
-      'API REST en Java 17 y Spring Boot 3 para administrar un servicio de agua potable: clientes, tomas, medidores, lecturas, tarifas progresivas, facturación, pagos y red de distribución. Arquitectura por capas (Controller, Service, Repository, Entity), seguridad stateless con Spring Security y JWT, persistencia en PostgreSQL 16 y documentación con Swagger/OpenAPI.',
+      'API REST en Java 17 y Spring Boot 3 para gestionar un servicio de agua potable: clientes, medidores, lecturas, tarifas progresivas, facturación y pagos. Arquitectura por capas (Controller, Service, Repository), seguridad stateless con Spring Security y JWT, persistencia en PostgreSQL 16 y documentación con Swagger/OpenAPI.',
     tags: ['Java', 'Spring Boot', 'PostgreSQL', 'JPA / Hibernate', 'Spring Security', 'JWT', 'REST API'],
     link: 'https://github.com/GustavoDiaz09/servicio-agua',
   },
@@ -54,7 +54,7 @@ export const projects = [
     period: '2026',
     subtitle: 'Aplicación web PWA offline-first',
     description:
-      'Aplicación web para administrar una tienda: usuarios, productos, ingresos, egresos, resúmenes financieros, alertas de inventario y CRM de deudas. Funciona sin conexión (IndexedDB), es instalable como PWA y sincroniza entre dispositivos mediante Supabase y una Edge Function. Incluye sistema de roles y autenticación local.',
+      'Aplicación para administrar una tienda: productos, ingresos y egresos, resúmenes financieros, alertas de inventario y CRM de deudas. Funciona sin conexión (IndexedDB), es instalable como PWA y sincroniza entre dispositivos con Supabase y Edge Functions. Incluye roles de usuario y autenticación local.',
     tags: ['TypeScript', 'React', 'Vite', 'Tailwind', 'PWA', 'Supabase', 'Offline-first'],
     link: 'https://github.com/GustavoDiaz09/Admitienda',
     demo: 'https://admitienda.vercel.app',
@@ -76,37 +76,38 @@ export const education = [
     period: '2023 - 2026',
     institution: 'Universidad de Cartagena',
     description:
-      'Formación integral en fundamentos de ingeniería, programación, diseño de sistemas y metodologías ágiles para la construcción de software de calidad.',
+      'Formación en programación, diseño de sistemas y metodologías ágiles para construir software de calidad.',
   },
 ]
 
 export const skills = [
+  'TypeScript',
+  'JavaScript',
+  'React',
   'HTML5',
   'CSS3',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Vite',
   'Tailwind',
+  'Vite',
   'Diseño Responsivo',
   'PWA / Offline-first',
-  'Python',
-  'Tkinter',
   'Java',
-  'C#',
-  '.NET',
-  'Node.js',
   'Spring Boot',
+  'REST APIs',
+  'JWT',
+  'Node.js',
+  'Python',
   'Supabase',
   'PostgreSQL',
   'SQL Server',
+  'C#',
+  '.NET',
+  'Docker',
+  'Git & GitHub',
+  'Testing (pytest)',
   'IA Generativa (LLMs)',
   'Agentes de IA',
   'Desarrollo asistido por IA',
   'Código limpio y seguro',
-  'Docker',
-  'Testing (pytest)',
-  'Git & GitHub',
   'Trabajo en equipo',
   'Resolución de problemas',
 ]
