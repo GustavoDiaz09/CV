@@ -1,4 +1,4 @@
-import { profile, contact, copy, resumePdfUrl } from '../data/resume'
+import { contact, copy, resumePdfUrl } from '../data/resume'
 
 const email = contact.find((c) => c.id === 'email')
 
@@ -35,12 +35,6 @@ export default function Footer() {
           ))}
         </ul>
 
-        <div className="footer__bar">
-          <span>
-            © {new Date().getFullYear()} {profile.name}
-          </span>
-          <span>{copy.footer.made}</span>
-        </div>
       </div>
     </footer>
   )

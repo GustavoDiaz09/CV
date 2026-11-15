@@ -51,6 +51,21 @@
     transform: none !important;
   }
 
+  html {
+    scroll-snap-type: none !important;
+  }
+
+  .hero,
+  .section,
+  .footer {
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: block !important;
+    padding-top: 0 !important;
+  }
+
   /* --- Ocultar navegación, decoración e interacción --- */
   .nav,
   .backdrop,
@@ -451,15 +466,20 @@
     border-top: 0.6pt solid var(--rule);
   }
 
-  .footer__bar {
+  .sitebar {
+    position: static;
+    height: auto;
+    display: block;
+    padding: 3pt 0 0;
+    background: none;
+    backdrop-filter: none;
     border: 0;
-    padding: 0;
     font-family: var(--font-body);
     font-size: 7.4pt;
     color: var(--ink-soft);
   }
 
-  .footer__bar span:last-child {
+  .sitebar span:last-child {
     display: none;
   }
 }

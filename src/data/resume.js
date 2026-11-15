@@ -59,6 +59,12 @@ export const copy = {
   },
 }
 
+export const easterEgg = {
+  url: 'https://www.youtube.com/watch?v=Jsfl7d1EzBw',
+  clicks: 7,
+  windowMs: 3000,
+}
+
 export const contact = [
   {
     id: 'email',

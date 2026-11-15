@@ -1,7 +1,19 @@
-import { profile, contact, copy, resumePdfUrl } from '../data/resume'
+import { useRef } from 'react'
+import { profile, contact, copy, resumePdfUrl, easterEgg } from '../data/resume'
 import Icon from './Icon'
 
 export default function Hero() {
+  const photoClicks = useRef([])
+
+  const onPhotoClick = () => {
+    const now = Date.now()
+    photoClicks.current = [...photoClicks.current.filter((t) => now - t < easterEgg.windowMs), now]
+    if (photoClicks.current.length >= easterEgg.clicks) {
+      photoClicks.current = []
+      window.open(easterEgg.url, '_blank', 'noopener,noreferrer')
+    }
+  }
+
   return (
     <section id="inicio" className="hero">
       <div className="container hero__grid">
@@ -32,7 +44,12 @@ export default function Hero() {
 
         <aside className="hero__aside">
           <figure className="hero__figure">
-            <img className="hero__img" src={profile.photo} alt={`Foto de ${profile.name}`} />
+            <img
+              className="hero__img"
+              src={profile.photo}
+              alt={`Foto de ${profile.name}`}
+              onClick={onPhotoClick}
+            />
             <figcaption className="hero__caption">
               {profile.location}
               <span>{profile.university}</span>
