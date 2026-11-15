@@ -1,3 +1,5 @@
+import RetroBackdrop from './components/RetroBackdrop'
+import PixelCursor from './components/PixelCursor'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Profile from './components/Profile'
@@ -11,6 +13,8 @@ import './print.css'
 function App() {
   return (
     <>
+      <RetroBackdrop />
+      <PixelCursor />
       <Navbar />
       <main>
         <Hero />

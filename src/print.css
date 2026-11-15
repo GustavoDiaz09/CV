@@ -10,16 +10,21 @@
 
 @media print {
   :root {
-    --text: #1a1a1a;
-    --text-muted: #45536b;
-    --accent: #1b4dd8;
-    --line: #d5dbe6;
+    --paper: #ffffff;
+    --paper-raised: #ffffff;
+    --ink: #111816;
+    --ink-soft: #3d4a44;
+    --rule: #c9d3cc;
+    --signal-ink: #0f7a4f;
+    --hot: #0f7a4f;
+    --ink-on-dark: #111816;
+    --ink-on-dark-soft: #3d4a44;
   }
 
   html,
   body {
     background: #fff !important;
-    color: var(--text) !important;
+    color: var(--ink) !important;
     font-size: 9pt;
     line-height: 1.3;
   }
@@ -41,353 +46,417 @@
     text-decoration: none;
   }
 
-  /* Todo visible: las animaciones de scroll no corren al imprimir */
   .reveal {
     opacity: 1 !important;
     transform: none !important;
   }
 
-  /* --- Ocultar navegación y elementos decorativos --- */
+  /* --- Ocultar navegación, decoración e interacción --- */
   .nav,
-  .hero__ring,
+  .backdrop,
+  .fx-ring,
+  .fx-shard,
+  .hero__status,
   .hero__actions,
-  .hero__intro,
-  .hero__badge,
-  .footer__cta,
-  .footer__socials,
-  .section__eyebrow,
+  .hero__caption,
+  .section__index,
   .section__subtitle,
-  .project-card__icon,
-  .highlight-card__icon,
-  .edu-card__badge,
-  .hero__contact-link svg,
-  .project-card__period svg,
-  .project-card__link svg,
-  .skill-chip__dot {
+  .availability,
+  .highlight__n,
+  .project__index,
+  .project__links svg,
+  .text-link svg,
+  .footer__cta,
+  .footer__socials {
     display: none !important;
   }
 
-  /* --- Encabezado --- */
+  /* --- Encabezado: nombre a la izquierda, foto a la derecha --- */
   .hero {
     padding: 0 0 4pt;
-    background: none;
-    overflow: visible;
+    border: 0;
   }
 
-  .hero__inner {
+  .hero__grid {
     display: grid;
     grid-template-columns: 1fr 26mm;
-    gap: 7mm;
+    gap: 0 7mm;
     align-items: start;
   }
 
-  /* El ancho de impresión dispara las media queries móviles: se neutraliza el order:-1 */
-  .hero__media {
-    order: 0 !important;
-  }
-
-  .hero__eyebrow {
-    background: none;
-    color: var(--accent);
-    padding: 0;
-    border-radius: 0;
-    font-size: 8.4pt;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 2pt;
-  }
-
-  .hero__dot {
-    display: none;
+  .hero__main {
+    animation: none;
   }
 
   .hero__name {
-    font-size: 19pt;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-size: 30pt;
+    line-height: 0.92;
+    margin-bottom: 3pt;
   }
 
   .hero__name-accent {
-    display: block;
-    color: var(--accent);
+    display: inline;
+    background: none;
+    color: var(--signal-ink);
+    padding: 0;
+    margin: 0;
   }
 
   .hero__role {
-    font-size: 10pt;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin: 2pt 0 4pt;
+    font-family: var(--font-body);
+    font-size: 9pt;
+    font-weight: 500;
+    margin-bottom: 2pt;
+  }
+
+  .hero__intro {
+    font-size: 9pt;
+    line-height: 1.35;
+    max-width: none;
+    margin-bottom: 0;
+    color: var(--ink);
+  }
+
+  /* El contenedor de la foto se desarma para colocar el contacto bajo el texto */
+  .hero__aside {
+    display: contents;
+  }
+
+  .hero__figure {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .hero__img {
+    width: 26mm;
+    aspect-ratio: 3 / 4;
+    filter: none;
+    border: 0.6pt solid var(--rule);
   }
 
   .hero__contact {
+    grid-column: 1;
+    grid-row: 2;
     display: flex;
     flex-wrap: wrap;
-    gap: 1pt 9pt;
-    font-size: 8.4pt;
-    border-top: 0.6pt solid var(--line);
+    gap: 1pt 0;
+    margin-top: 4pt;
     padding-top: 3pt;
+    border-top: 0.6pt solid var(--rule);
+  }
+
+  .hero__contact li {
+    border: 0;
   }
 
   .hero__contact-link {
-    display: inline-flex;
-    align-items: baseline;
-    background: none;
-    border: 0;
-    border-radius: 0;
+    display: inline;
     padding: 0;
-    color: var(--text);
+    font-size: 8pt;
+    margin-right: 7pt;
   }
 
-  /* Separadores: sin esto el texto extraído por un ATS queda pegado ("HTML5CSS3") */
+  .hero__contact-link:hover {
+    padding-left: 0;
+  }
+
+  .hero__contact-key {
+    display: none;
+  }
+
+  .hero__contact-value {
+    overflow-wrap: anywhere;
+  }
+
+  /* Separadores: sin esto el texto extraído por un ATS queda pegado */
   .hero__contact-link::after {
     content: ' ·';
-    color: var(--text-muted);
+    color: var(--ink-soft);
+  }
+
+  .hero__contact li:last-child .hero__contact-link::after {
+    content: none;
   }
 
   .hero__contact-link[data-contact='linkedin']::after,
   .hero__contact-link[data-contact='github']::after {
     content: ' · ' attr(href);
-    font-size: 7.4pt;
-    color: var(--text-muted);
+    font-size: 7.2pt;
+    color: var(--ink-soft);
     overflow-wrap: anywhere;
   }
 
-  .hero__card {
-    width: 100% !important;
-    background: none;
-    border: 0;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .hero__img-wrap {
-    border: 0.8pt solid var(--line);
-    border-radius: 3mm;
-    overflow: hidden;
-  }
-
-  .hero__img {
-    border-radius: 3mm;
-    object-fit: cover;
-    aspect-ratio: 3 / 4;
-  }
-
-  .hero__card-footer {
-    display: none;
+  .hero__contact li:last-child .hero__contact-link[data-contact='github']::after {
+    content: ' ' attr(href);
   }
 
   /* --- Secciones --- */
-  .section,
-  .section:nth-of-type(even) {
-    background: none !important;
-    padding: 0 0 4pt;
+  .section {
+    padding: 0 0 5pt;
+    border: 0;
+  }
+
+  .section__grid {
+    display: block;
   }
 
   .section__head {
     max-width: none;
-    margin: 0 0 4pt;
+    margin: 0 0 3pt;
     break-after: avoid;
   }
 
   .section__title {
-    font-size: 10.5pt;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    color: var(--primary-deep);
-    border-bottom: 1pt solid var(--accent);
-    padding-bottom: 2pt;
-    margin: 0;
+    font-size: 16pt;
+    line-height: 1;
+    color: var(--ink);
+    border-bottom: 0.8pt solid var(--ink);
+    padding-bottom: 1.5pt;
   }
 
   .lead {
-    font-size: 8.8pt;
-    color: var(--text);
+    font-size: 9pt;
+    line-height: 1.35;
     max-width: none;
-    margin-bottom: 5pt;
+    margin: 4pt 0 0;
+    font-family: var(--font-body);
+    color: var(--ink);
   }
 
   /* --- Perfil --- */
   .highlights {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5pt;
+    gap: 0 8pt;
+    border: 0;
+    margin-top: 4pt;
   }
 
-  .highlight-card {
-    border: 0.6pt solid var(--line);
-    border-radius: 2mm;
-    padding: 4pt 5pt;
+  .highlight,
+  .highlight + .highlight {
+    padding: 0;
+    border: 0;
     break-inside: avoid;
   }
 
-  .highlight-card h3 {
-    font-size: 8.6pt;
+  .highlight__title {
+    font-size: 9pt;
+    font-weight: 600;
     margin-bottom: 1pt;
+    font-family: var(--font-body);
   }
 
-  .highlight-card p {
-    font-size: 7.7pt;
+  .highlight__text {
+    font-size: 7.8pt;
     line-height: 1.28;
+    color: var(--ink);
   }
 
   /* --- Proyectos --- */
   .projects {
-    grid-template-columns: 1fr;
-    gap: 4pt;
+    border: 0;
   }
 
-  .project-card {
-    border: 0.6pt solid var(--line);
-    border-left: 2pt solid var(--accent);
-    border-radius: 1.5mm;
-    padding: 4pt 7pt;
-    gap: 2pt;
+  .project {
+    display: block;
+    padding: 4pt 0;
+    border-bottom: 0.6pt solid var(--rule);
     break-inside: avoid;
   }
 
-  .project-card__head {
+  .project:last-child {
+    border-bottom: 0;
+  }
+
+  .project__meta {
+    display: inline;
+    margin-right: 5pt;
+  }
+
+  .project__period {
+    display: inline;
+    font-family: var(--font-mono);
+    font-size: 7.6pt;
+  }
+
+  .project__body {
     display: block;
   }
 
-  .project-card__period {
-    font-size: 8pt;
+  .project:hover .project__title {
+    color: var(--ink);
   }
 
-  .project-card__subtitle {
+  .project__title {
     display: inline;
-    font-size: 8.4pt;
-  }
-
-  .project-card__period::after {
-    content: ' ·';
-  }
-
-  .project-card__title {
-    font-size: 10.4pt;
-    margin-top: 1pt;
-  }
-
-  .project-card__desc {
-    font-size: 8.2pt;
-    line-height: 1.3;
-  }
-
-  .project-card__tags {
-    gap: 0;
-  }
-
-  .tag {
-    display: inline-block;
-    background: none;
-    color: var(--text-muted);
-    padding: 0;
-    border-radius: 0;
-    font-size: 7.4pt;
+    font-size: 10pt;
     font-weight: 600;
-    margin: 0 6pt 0 0;
+    font-family: var(--font-body);
+    margin: 0 0 0;
   }
 
-  .tag::after {
-    content: ' ·';
+  .project__subtitle {
+    display: inline;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 8.4pt;
+    margin: 0 0 0 4pt;
   }
 
-  .project-card__links {
-    border-top: 0.6pt solid var(--line);
-    padding-top: 3pt;
-    gap: 0 12pt;
+  .project__subtitle::before {
+    content: '· ';
   }
 
-  .project-card__link {
-    border: 0;
-    background: none;
-    padding: 0;
-    font-size: 7.4pt;
-    color: var(--text-muted);
-  }
-
-  .project-card__link--primary {
-    color: var(--accent);
-  }
-
-  .project-card__link::after {
-    content: ' ' attr(href) ' ·';
-    font-weight: 400;
-    overflow-wrap: anywhere;
-  }
-
-  .project-card__link:last-child::after {
-    content: ' ' attr(href);
-  }
-
-  /* --- Educación --- */
-  .education {
+  .project__desc {
+    font-size: 7.9pt;
+    line-height: 1.3;
+    margin: 1.5pt 0 1.5pt;
     max-width: none;
   }
 
-  .edu-card {
+  .project__tags {
+    display: inline;
+    margin: 0;
+  }
+
+  .project__tags li {
+    display: inline;
+    font-family: var(--font-mono);
+    font-size: 7pt;
+    color: var(--ink-soft);
+  }
+
+  .project__tags li::before {
+    content: none;
+  }
+
+  .project__tags li::after {
+    content: ' ·';
+  }
+
+  .project__tags li:last-child::after {
+    content: none;
+  }
+
+  .project__links {
+    display: block;
+    margin-top: 1.5pt;
+  }
+
+  .text-link {
+    display: inline;
+    border: 0;
+    padding: 0;
+    font-size: 7.4pt;
+    color: var(--ink-soft);
+    margin-right: 10pt;
+  }
+
+  .text-link::after {
+    content: ' ' attr(href);
+    font-family: var(--font-mono);
+    font-size: 6.8pt;
+    overflow-wrap: anywhere;
+  }
+
+  /* --- Educación --- */
+  .edu {
     display: block;
   }
 
-  .edu-card__left {
-    display: none;
+  .edu__period {
+    display: inline;
+    font-family: var(--font-mono);
+    font-size: 7.6pt;
+    padding: 0;
   }
 
-  .edu-card__body {
-    border: 0.6pt solid var(--line);
-    border-radius: 1.5mm;
-    padding: 4pt 7pt;
-    break-inside: avoid;
+  .edu__body {
+    display: block;
   }
 
-  .edu-card__degree {
-    font-size: 9.6pt;
-    margin: 2pt 0 1pt;
+  .edu__degree {
+    display: inline;
+    font-size: 9.4pt;
+    font-weight: 600;
+    font-family: var(--font-body);
+    margin: 0 4pt;
   }
 
-  .edu-card__institution {
-    font-size: 8.4pt;
-  }
-
-  .edu-card__desc {
+  .edu__institution {
+    display: inline;
+    font-family: var(--font-body);
     font-size: 8.2pt;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .edu__institution::before {
+    content: '· ';
+  }
+
+  .edu__desc {
+    font-size: 7.9pt;
     line-height: 1.3;
-    margin-top: 3pt;
+    margin-top: 1pt;
   }
 
   /* --- Habilidades --- */
-  .skills {
+  .skill-groups {
     display: block;
-    line-height: 1.3;
   }
 
-  .skill-chip {
-    display: inline-block;
-    border: 0;
-    background: none;
+  .skill-group {
+    display: block;
     padding: 0;
-    border-radius: 0;
-    font-size: 8.2pt;
-    font-weight: 500;
-    margin: 0 6pt 0 0;
+    border: 0;
+    margin-bottom: 2pt;
   }
 
-  .skill-chip::after {
-    content: ' ·';
-    color: var(--text-muted);
+  .skill-group__title {
+    display: inline;
+    font-family: var(--font-body);
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-right: 4pt;
+  }
+
+  .skill-group__title::after {
+    content: ':';
+  }
+
+  .skills {
+    display: inline;
+    font-size: 8pt;
+  }
+
+  .skills li {
+    display: inline;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skills li:not(:last-child)::after {
+    content: ' · ';
+    position: static;
+    color: var(--ink-soft);
   }
 
   /* --- Pie --- */
   .footer {
     background: none;
-    color: var(--text-muted);
+    color: var(--ink-soft);
     padding: 3pt 0 0;
-    border-top: 0.6pt solid var(--line);
+    border-top: 0.6pt solid var(--rule);
   }
 
   .footer__bar {
     border: 0;
     padding: 0;
-    font-size: 7.6pt;
-    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 7.4pt;
+    color: var(--ink-soft);
   }
 
   .footer__bar span:last-child {

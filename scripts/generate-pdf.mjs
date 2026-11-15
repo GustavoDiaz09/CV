@@ -44,7 +44,7 @@ const run = (args, options = {}) =>
   new Promise((res, rej) => {
     const child = spawn(process.execPath, args, { stdio: 'inherit', cwd: root, ...options })
     child.on('error', rej)
-    child.on('exit', (code) => (code === 0 ? res() : rej(new Error(`vit exited con ${code}`))))
+    child.on('exit', (code) => (code === 0 ? res() : rej(new Error(`vite exited con ${code}`))))
   })
 
 function findFile(pathname) {

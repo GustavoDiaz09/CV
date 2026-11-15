@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { navLinks, resumePdfUrl } from '../data/resume'
-import Icon from './Icon'
+import { navLinks, profile, copy, resumePdfUrl } from '../data/resume'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -20,40 +19,39 @@ export default function Navbar() {
     }
   }, [open])
 
+  const close = () => setOpen(false)
+
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
-        <a href="#inicio" className="nav__brand" onClick={() => setOpen(false)}>
-          <span className="nav__brand-mark">GD</span>
-          <span className="nav__brand-text">Gustavo Díaz</span>
+        <a href="#inicio" className="nav__brand" onClick={close}>
+          {profile.shortName}
         </a>
 
-        <nav className={`nav__links ${open ? 'nav__links--open' : ''}`}>
+        <nav
+          id="menu-principal"
+          aria-label="Principal"
+          className={`nav__links ${open ? 'nav__links--open' : ''}`}
+        >
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            <a key={link.href} href={link.href} onClick={close}>
               {link.label}
             </a>
           ))}
-          <a
-            href={resumePdfUrl}
-            className="nav__cta nav__cta--ghost"
-            download
-            onClick={() => setOpen(false)}
-          >
-            CV (PDF)
-          </a>
-          <a href="#contacto" className="nav__cta" onClick={() => setOpen(false)}>
-            Contáctame
+          <a href={resumePdfUrl} className="nav__cta" download onClick={close}>
+            {copy.nav.cv}
           </a>
         </nav>
 
         <button
           className="nav__toggle"
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          aria-controls="menu-principal"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <Icon name={open ? 'close' : 'menu'} size={26} />
+          <span className="nav__toggle-bar" />
+          <span className="nav__toggle-bar" />
         </button>
       </div>
     </header>

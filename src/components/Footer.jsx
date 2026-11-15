@@ -1,54 +1,45 @@
-import { profile, contact, resumePdfUrl } from '../data/resume'
-import Icon from './Icon'
+import { profile, contact, copy, resumePdfUrl } from '../data/resume'
+
+const email = contact.find((c) => c.id === 'email')
 
 export default function Footer() {
   return (
     <footer id="contacto" className="footer">
       <div className="container">
         <div className="footer__cta">
-          <h2 className="footer__title">¿Trabajamos juntos?</h2>
-          <p className="footer__subtitle">
-            Si buscas un desarrollador web con ganas de aprender y crecer, estaré encantado de
-            conversar.
-          </p>
+          <h2 className="footer__title">{copy.footer.title}</h2>
+          <p className="footer__subtitle">{copy.footer.subtitle}</p>
+          <a href={email.href} className="footer__mail">
+            {email.label}
+          </a>
           <div className="footer__actions">
-            <a
-              href={contact[0].href}
-              className="btn btn--light"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Escríbeme un correo
-              <Icon name="mail" size={18} />
-            </a>
             <a href={resumePdfUrl} className="btn btn--outline" download>
-              <Icon name="external" size={18} />
-              Descargar CV (PDF)
+              {copy.footer.cv}
             </a>
           </div>
         </div>
 
-        <div className="footer__socials">
+        <ul className="footer__socials">
           {contact.map((c) => (
-            <a
-              key={c.id}
-              href={c.href}
-              target={c.href.startsWith('http') ? '_blank' : undefined}
-              rel={c.href.startsWith('http') ? 'noreferrer' : undefined}
-              className="footer__social"
-              aria-label={c.label}
-            >
-              <Icon name={c.icon} size={20} />
-              <span>{c.label}</span>
-            </a>
+            <li key={c.id}>
+              <a
+                href={c.href}
+                target={c.href.startsWith('http') ? '_blank' : undefined}
+                rel={c.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="footer__social"
+                aria-label={c.label}
+              >
+                {c.label}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="footer__bar">
           <span>
             © {new Date().getFullYear()} {profile.name}
           </span>
-          <span>Hecho con React</span>
+          <span>{copy.footer.made}</span>
         </div>
       </div>
     </footer>

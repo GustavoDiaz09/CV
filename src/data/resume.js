@@ -4,12 +4,59 @@ export const resumePdfUrl = `${import.meta.env.BASE_URL}CV-Gustavo-Diaz-Mercado.
 
 export const profile = {
   name: 'Gustavo Alonso Díaz Mercado',
+  shortName: 'Gustavo Díaz Mercado',
   role: 'Ingeniero de Software en formación · Desarrollo Web y Backend',
   university: 'Universidad de Cartagena',
   location: 'Magangué, Bolívar, Colombia',
+  availability: ['Disponible para viajar', 'Siempre disponible'],
   photo: gustavoPhoto,
+  tagline:
+    'Desarrollo aplicaciones web y APIs REST con React, TypeScript, Java y Spring Boot.',
   summary:
-    'Ingeniero de Software en formación con experiencia en desarrollo web y APIs REST. He publicado proyectos reales con TypeScript, React, Java, Spring Boot, PostgreSQL y Supabase, entre ellos una aplicación PWA offline-first y una API con autenticación JWT. Trabajo con agentes de IA para acelerar el desarrollo y reviso, pruebo y valido cada resultado para entregar código limpio, seguro y funcional.',
+    'Ingeniero de Software en formación con experiencia en desarrollo web y APIs REST. He publicado proyectos reales con TypeScript, React, Java, Spring Boot, PostgreSQL y Supabase, entre ellos una aplicación PWA offline-first y una API con autenticación JWT. Uso agentes de IA para acelerar el desarrollo y reviso y valido cada resultado antes de entregarlo.',
+}
+
+export const copy = {
+  nav: {
+    cv: 'CV (PDF)',
+  },
+  meta: {
+    description:
+      'Hoja de vida de Gustavo Alonso Díaz Mercado, ingeniero de software en formación en la Universidad de Cartagena.',
+    title: 'Gustavo Díaz Mercado | Hoja de Vida',
+  },
+  hero: {
+    status: 'Disponible para proyectos',
+    actions: {
+      projects: 'Ver proyectos',
+      cv: 'Descargar CV (PDF)',
+    },
+  },
+  sections: {
+    profile: {
+      title: 'Perfil profesional',
+      subtitle: 'Quién soy y qué busco aportar.',
+    },
+    projects: {
+      title: 'Proyectos',
+      subtitle: 'Proyectos desarrollados por mí, con código disponible en GitHub.',
+    },
+    education: {
+      title: 'Educación',
+      subtitle: 'Mi desarrollo académico y profesional.',
+    },
+    skills: {
+      title: 'Tecnologías',
+      subtitle: 'Herramientas que he usado en proyectos reales.',
+    },
+  },
+  footer: {
+    title: '¿Trabajamos juntos?',
+    subtitle:
+      'Si buscas un desarrollador de software con ganas de aprender y crecer, estaré encantado de conversar.',
+    cv: 'Descargar CV (PDF)',
+    made: 'Hecho con React',
+  },
 }
 
 export const contact = [
@@ -17,7 +64,7 @@ export const contact = [
     id: 'email',
     label: 'gustavoalonsomercado199@gmail.com',
     icon: 'mail',
-    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=gustavoalonsomercado199@gmail.com',
+    href: 'mailto:gustavoalonsomercado199@gmail.com',
   },
   {
     id: 'phone',
@@ -36,6 +83,21 @@ export const contact = [
     label: 'GitHub',
     icon: 'github',
     href: 'https://github.com/GustavoDiaz09',
+  },
+]
+
+export const highlights = [
+  {
+    title: 'Aprendizaje continuo',
+    text: 'Incorporé Spring Boot 3, Supabase y PWA en proyectos reales.',
+  },
+  {
+    title: 'Backend y APIs',
+    text: 'API REST con Spring Security, JWT, PostgreSQL y documentación Swagger/OpenAPI.',
+  },
+  {
+    title: 'Frontend y offline',
+    text: 'Aplicación PWA que funciona sin conexión y sincroniza con Supabase.',
   },
 ]
 
@@ -73,43 +135,30 @@ export const projects = [
 export const education = [
   {
     degree: 'Ingeniería de Software',
-    period: '2023 - 2026',
+    period: '2023 - 2026 (egreso previsto)',
     institution: 'Universidad de Cartagena',
     description:
       'Formación en programación, diseño de sistemas y metodologías ágiles para construir software de calidad.',
   },
 ]
 
-export const skills = [
-  'TypeScript',
-  'JavaScript',
-  'React',
-  'HTML5',
-  'CSS3',
-  'Tailwind',
-  'Vite',
-  'Diseño Responsivo',
-  'PWA / Offline-first',
-  'Java',
-  'Spring Boot',
-  'REST APIs',
-  'JWT',
-  'Node.js',
-  'Python',
-  'Supabase',
-  'PostgreSQL',
-  'SQL Server',
-  'C#',
-  '.NET',
-  'Docker',
-  'Git & GitHub',
-  'Testing (pytest)',
-  'IA Generativa (LLMs)',
-  'Agentes de IA',
-  'Desarrollo asistido por IA',
-  'Código limpio y seguro',
-  'Trabajo en equipo',
-  'Resolución de problemas',
+export const skillGroups = [
+  {
+    label: 'Frontend',
+    items: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind', 'Vite', 'Diseño Responsivo', 'PWA / Offline-first'],
+  },
+  {
+    label: 'Backend y datos',
+    items: ['Java', 'Spring Boot', 'REST APIs', 'JWT', 'Python', 'Supabase', 'PostgreSQL'],
+  },
+  {
+    label: 'Herramientas',
+    items: ['Git & GitHub'],
+  },
+  {
+    label: 'Inteligencia artificial',
+    items: ['IA Generativa (LLMs)', 'Agentes de IA', 'Desarrollo asistido por IA'],
+  },
 ]
 
 export const navLinks = [
